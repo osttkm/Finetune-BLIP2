@@ -1,0 +1,23 @@
+datasets:
+  my_vqa_dataset: # name of the dataset builder
+    dataset_card: None
+    data_dir: /home/oshita/vlm/fine-tune_data/mvtec/hazelnut
+    data_type: images # [images|videos|features]
+
+    build_info:
+      # Be careful not to append minus sign (-) before split to avoid itemizing
+      annotations:
+        train:
+          path: /home/oshita/vlm/fine-tune_data/mvtec/hazelnut/detail.txt
+          # md5: aa31ac474cf6250ebb81d18348a07ed8
+          # storage: coco/annotations/coco_karpathy_train.json
+        val:
+          path: /home/oshita/vlm/fine-tune_data/mvtec/hazelnut/detail.txt
+          # md5: b273847456ef5580e33713b1f7de52a0
+          # storage:  coco/annotations/coco_karpathy_val.json
+        test:
+          path: /home/oshita/vlm/fine-tune_data/mvtec/hazelnut/detail.txt
+          # md5: 3ff34b0ef2db02d01c37399f6a2a6cd1
+          # storage: coco/annotations/coco_karpathy_test.json
+      images:
+        storage: /home/oshita/vlm/fine-tune_data/mvtec/hazelnut/

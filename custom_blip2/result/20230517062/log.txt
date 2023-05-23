@@ -1,0 +1,88 @@
+{
+    "run": {
+        "task": "vqa",
+        "lr_sched": "linear_warmup_cosine_lr",
+        "init_lr": 0.0001,
+        "min_lr": 1e-05,
+        "warmup_lr": 1e-06,
+        "weight_decay": 0.05,
+        "max_epoch": 10,
+        "batch_size_train": 100,
+        "batch_size_eval": 64,
+        "num_workers": 4,
+        "warmup_steps": 5000,
+        "seed": 42,
+        "output_dir": "/home/oshita/vlm/custom_blip2/result",
+        "amp": true,
+        "resume_ckpt_path": null,
+        "evaluate": false,
+        "train_splits": [
+            "train"
+        ],
+        "device": "cuda",
+        "world_size": 1,
+        "dist_url": "env://",
+        "distributed": false
+    },
+    "model": {
+        "arch": "blip2",
+        "load_finetuned": false,
+        "pretrained": "https://storage.googleapis.com/sfr-vision-language-research/LAVIS/models/BLIP2/blip2_pretrained.pth",
+        "finetuned": "",
+        "image_size": 224,
+        "drop_path_rate": 0,
+        "use_grad_checkpoint": false,
+        "vit_precision": "fp16",
+        "freeze_vit": true,
+        "num_query_token": 32,
+        "model_type": "pretrain",
+        "load_pretrained": false
+    },
+    "preprocess": {
+        "vis_processor": {
+            "train": {
+                "name": "blip_image_train",
+                "image_size": 224
+            },
+            "eval": {
+                "name": "blip_image_eval",
+                "image_size": 224
+            }
+        },
+        "text_processor": {
+            "train": {
+                "name": "blip_caption"
+            },
+            "eval": {
+                "name": "blip_caption"
+            }
+        }
+    },
+    "datasets": {
+        "vg_caption": {
+            "data_type": "images",
+            "build_info": {
+                "annotations": {
+                    "train": {
+                        "url": "https://storage.googleapis.com/sfr-vision-language-research/LAVIS/datasets/visual_genome/vg_caption.json",
+                        "storage": "vg/annotations/vg_caption.json"
+                    }
+                },
+                "images": {
+                    "storage": "vg/images/"
+                }
+            },
+            "vis_processor": {
+                "train": {
+                    "name": "blip_image_train",
+                    "image_size": 224
+                }
+            },
+            "text_processor": {
+                "train": {
+                    "name": "blip_caption"
+                }
+            }
+        }
+    }
+}

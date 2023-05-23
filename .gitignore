@@ -1,0 +1,4 @@
+img/
+fine-tune_data/
+bert_weight.pth.tar
+# LAVIS/
