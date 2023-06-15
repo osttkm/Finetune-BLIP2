@@ -1,4 +1,7 @@
 # Finetune-BLIP2
+BLIP2のファインチューニング用のコードです．
+ライブラリの構造を理解するために，フォルダごとcloneしてあります．
+
 <img width="550" alt="image" src="https://github.com/osttkm/Finetune-BLIP2/assets/104403446/efb6f0bf-1223-481c-9d27-a057ee23199e">
 <img width="550" alt="image" src="https://github.com/osttkm/Finetune-BLIP2/assets/104403446/557dce1a-855b-4601-a81a-fc4a052bc3ac">
 <img width="550" alt="image" src="https://github.com/osttkm/Finetune-BLIP2/assets/104403446/6403bb19-ad97-4f11-b844-e411d143404a">
